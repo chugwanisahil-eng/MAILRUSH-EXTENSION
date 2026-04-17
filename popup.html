@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gmail Polish - AI Email Enhancer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 350px;
+      min-height: 400px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #333;
+      padding: 0;
+    }
+
+    .header {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 24px 20px;
+      text-align: center;
+      border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+    }
+
+    .logo {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 12px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    }
+
+    .logo svg {
+      width: 36px;
+      height: 36px;
+      color: white;
+    }
+
+    h1 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #1f2937;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    .content {
+      background: white;
+      padding: 24px 20px;
+    }
+
+    .status-card {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border: 1px solid #bae6fd;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    .status-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #0c4a6e;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .status-indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+    }
+
+    .status-text {
+      font-size: 13px;
+      color: #075985;
+      line-height: 1.5;
+    }
+
+    .instructions {
+      margin-bottom: 20px;
+    }
+
+    .instructions h2 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1f2937;
+      margin-bottom: 12px;
+    }
+
+    .instructions ol {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .instructions li {
+      font-size: 13px;
+      color: #4b5563;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    .instructions li strong {
+      color: #1f2937;
+    }
+
+    .config-section {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    .config-section h2 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1f2937;
+      margin-bottom: 12px;
+    }
+
+    .input-group {
+      margin-bottom: 12px;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      color: #374151;
+      margin-bottom: 6px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 13px;
+      font-family: 'Courier New', monospace;
+      transition: border-color 0.2s;
+    }
+
+    .input-group input:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    .save-btn {
+      width: 100%;
+      padding: 10px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .save-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    }
+
+    .save-btn:active {
+      transform: translateY(0);
+    }
+
+    .footer {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 16px 20px;
+      text-align: center;
+      border-top: 1px solid rgba(102, 126, 234, 0.1);
+    }
+
+    .footer-text {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .footer-text a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-text a:hover {
+      text-decoration: underline;
+    }
+
+    .alert {
+      background: #fef3c7;
+      border: 1px solid #fbbf24;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 16px;
+      font-size: 12px;
+      color: #92400e;
+      line-height: 1.5;
+    }
+
+    .alert strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #78350f;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <div class="logo">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 9L12 3L4 9L12 15L20 9Z" fill="currentColor" opacity="0.6" />
+        <path d="M4 15L12 21L20 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </div>
+    <h1>MAILRUSH</h1>
+    <p class="subtitle">AI-Powered Email Enhancement</p>
+  </div>
+
+  <div class="content">
+    <div class="status-card">
+      <div class="status-title">
+        <span class="status-indicator"></span>
+        Extension Active
+      </div>
+      <p class="status-text">
+        The extension is ready to polish your emails. Open Gmail and start composing!
+      </p>
+    </div>
+
+    <div class="instructions">
+      <h2>📝 How to Use</h2>
+      <ol>
+        <li>Open <strong>Gmail</strong> and click <strong>Compose</strong></li>
+        <li>Write your email draft (can be casual or rough)</li>
+        <li>Click the <strong>"Polish with AI"</strong> button in the toolbar</li>
+        <li>Watch as AI enhances your email to be more professional!</li>
+      </ol>
+    </div>
+
+    <div class="alert">
+      <strong>⚠️ Backend Required</strong>
+      Make sure the backend server is running on localhost:3000. Check the README for setup instructions.
+    </div>
+
+    <div class="config-section">
+      <h2>⚙️ Configuration</h2>
+      <div class="input-group">
+        <label for="api-url">Backend API URL</label>
+        <input type="text" id="api-url" value="http://localhost:3000/api/polish"
+          placeholder="http://localhost:3000/api/polish">
+      </div>
+      <button class="save-btn" id="save-config">Save Configuration</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p class="footer-text">
+      Made with ❤️ using <a href="https://ai.google.dev/" target="_blank">Google Gemini</a>
+    </p>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>

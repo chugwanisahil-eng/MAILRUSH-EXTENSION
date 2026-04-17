@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAILRUSH</title>
+    <link rel="stylesheet" href="sidepanel.css">
+</head>
+
+<body>
+    <div class="panel-container">
+        <header class="panel-header">
+            <div class="header-title">
+                MAILRUSH
+            </div>
+            <div class="header-controls">
+                <button id="theme-toggle" class="icon-button" style="border:none; background:transparent;"
+                    title="Toggle Dark/Light Mode">
+                    <!-- Sun Icon (for Dark Mode) -->
+                    <svg class="sun-icon hidden" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <path
+                            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42">
+                        </path>
+                    </svg>
+                    <!-- Moon Icon (for Light Mode) -->
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <main class="panel-content">
+            <div class="compose-area">
+                <label class="section-label">DETECTED CONTENT</label>
+                <div id="original-content" class="content-preview empty">
+                    <p>Open Gmail and start writing to see content here...</p>
+                </div>
+
+            </div>
+
+            <div class="options-area">
+                <label class="section-label">POLISH TONE</label>
+                <div class="tone-selector">
+                    <button class="tone-btn selected" data-tone="formal">Formal</button>
+                    <button class="tone-btn" data-tone="casual">Casual</button>
+                    <button class="tone-btn" data-tone="friendly">Friendly</button>
+                    <button class="tone-btn" data-tone="concise">Concise</button>
+                </div>
+            </div>
+
+            <div class="action-area">
+                <button id="polish-btn" class="primary-button">Polish Email</button>
+            </div>
+
+            <div id="result-area" class="result-area hidden">
+                <label class="section-label">POLISHED RESULT</label>
+                <div id="polished-content" class="content-preview result"></div>
+                <div class="result-actions">
+                    <button id="insert-btn" class="secondary-button">Insert into Gmail</button>
+                    <button id="copy-btn" class="icon-button" title="Copy to Clipboard">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="error-message" class="error-message hidden"></div>
+        </main>
+    </div>
+    <script src="sidepanel.js"></script>
+</body>
+
+</html>

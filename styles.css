@@ -1,0 +1,48 @@
+/* Gmail Polish Extension - Styles */
+
+/* Polish Button - Native Gmail Look */
+.gmail-polish-btn-container {
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+}
+
+.gmail-polish-button {
+    background-color: #1a73e8 !important;
+    /* Gmail Blue */
+    color: white !important;
+    border: none !important;
+    border-radius: 18px !important;
+    padding: 0 16px !important;
+    height: 36px !important;
+    font-family: 'Google Sans', Roboto, RobotoDraft, Helvetica, Arial, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    transition: background-color 0.2s, box-shadow 0.2s !important;
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3) !important;
+    z-index: 9999;
+}
+
+.gmail-polish-button:hover {
+    background-color: #1557b0 !important;
+    box-shadow: 0 1px 3px rgba(60, 64, 67, 0.3) !important;
+}
+
+.gmail-polish-button:active {
+    background-color: #174ea6 !important;
+}
+
+.gmail-polish-button svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Loading/Success states */
+.gmail-polish-button.loading {
+    opacity: 0.8;
+    cursor: wait !important;
+}
