@@ -1,6 +1,6 @@
 # MAILRUSH - AI Email Enhancer
 MY FIRST EXTENSION
-A Chrome extension that integrates with Gmail to help you polish your email drafts using Google's Gemini AI. Transform casual or rough email drafts into professional, well-structured messages with just one click!
+ Chrome extension that integrates with Gmail to help you polish your email drafts using Google's Gemini AI. Transform casual or rough email drafts into professional, well-structured messages with just one click!
 
 ## ✨ Features
 
